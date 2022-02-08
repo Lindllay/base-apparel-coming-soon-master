@@ -1,0 +1,133 @@
+:root{
+    --desaturated-red: hsl(0, 36%, 70%);
+    --soft-red: hsl(0, 93%, 68%);
+    --dark-grayish-red: hsl(0, 6%, 24%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.wrapper{
+    width: 100%;
+    height: 100vh;
+    font-family: 'Josefin Sans', sans-serif;
+    .top{
+        .logo{
+            padding-block: 30px;
+            padding-left: 40px;
+        }
+        .hero{
+            background-image: url(/images/hero-mobile.jpg);
+            height: 66.6vw;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    }
+    .down{
+        padding: 40px;
+        padding-bottom: 70px;
+        h1{
+            font-size: 3rem;
+            text-align: center;
+            letter-spacing: 1rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            span{
+                font-weight: 300;
+                color: var(--desaturated-red);
+            }
+        }
+        p{
+            color: var(--desaturated-red);
+            text-align: center;
+            line-height: 1.5rem;
+            padding-block: 2rem;
+            font-weight: 600;
+        }
+        form{
+            position: relative;
+            .email{
+                width: 100%;
+                height: 50px;
+                border-radius: 5rem;
+                border: 2px solid var(--desaturated-red);
+                padding-left: 1rem;
+            }
+            .email::placeholder{
+                color: var(--desaturated-red);
+            }
+            .email:focus{
+                outline: none;
+                background-color: rgb(255, 233, 233)
+            }
+            .button{
+                width: 70px;
+                height: 50px;
+                border-radius: 5rem;
+                border: none;
+                position: absolute;
+                right: 0px;
+                background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 74%, 74%));   
+                box-shadow: 0px 0px 50px 5px rgba(255, 106, 106, 0.3);
+                cursor: pointer;   
+                transition: 0.2s all ease-in-out;
+            }
+            .button:hover{
+                background: rgb(255, 204, 204);
+            }
+            .arrow{  
+                position: absolute;
+                right: 20px;
+                top: 10px;   
+                height: 30px;
+                pointer-events: none;
+            }
+            p{
+                color: rgb(255, 55, 55);
+                font-size: 12px;
+                padding: 0;
+                text-align: start;
+            }
+        }
+    }
+}
+.hidden{
+    display: none;
+}
+
+@media (min-width:650px){
+    .wrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        .top{
+            order: 2;
+            width: 40%;
+            .logo{
+                display: none;
+            }
+        .hero{
+            background-image: url(/images/hero-desktop.jpg); 
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height:100vh;
+        }    
+        }
+        .down{
+            order: 1;
+            width: 60%;
+            padding-inline: 10%;
+            h1{
+                text-align: start;
+            }
+            p{
+                text-align: start;
+            }
+            
+        }
+    }
+}
