@@ -13,5 +13,6 @@ button.addEventListener('click', function (){
     }
     else{
         document.querySelector('#validation').classList.add('hidden');
+        alert("Thanks for signing up!")
     }
 });
